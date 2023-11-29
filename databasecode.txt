@@ -1,0 +1,42 @@
+import sqlite3
+
+conn = sqlite3.connect("database1.db")
+cursor = conn.cursor()
+
+cursor.execute("CREATE TABLE IF NOT EXISTS basketball (id INTEGER PRIMARY KEY AUTOINCREMENT, court_name TEXT, pos_x REAL, pos_y REAL, rating REAL)")
+cursor.execute("CREATE TABLE IF NOT EXISTS valleyball (id INTEGER PRIMARY KEY AUTOINCREMENT, court_name TEXT, pos_x REAL, pos_y REAL, rating REAL)")
+cursor.execute("CREATE TABLE IF NOT EXISTS football (id INTEGER PRIMARY KEY AUTOINCREMENT, court_name TEXT, pos_x REAL, pos_y REAL, rating REAL)")
+cursor.execute("CREATE TABLE IF NOT EXISTS workout (id INTEGER PRIMARY KEY AUTOINCREMENT, court_name TEXT, pos_x REAL, pos_y REAL, rating REAL)")
+conn.commit()
+
+cursor.execute("INSERT INTO basketball (court_name, pos_x, pos_y, rating) VALUES ('basketball court 1', 47.225922, 39.777984, 5.0)")
+cursor.execute("INSERT INTO basketball (court_name, pos_x, pos_y, rating) VALUES ('basketball court 2', 47.225512, 39.667785, 4.2)")
+cursor.execute("INSERT INTO basketball (court_name, pos_x, pos_y, rating) VALUES ('basketball court 3', 47.226090, 39.778895, 3.9)")
+cursor.execute("INSERT INTO basketball (court_name, pos_x, pos_y, rating) VALUES ('basketball court 4', 47.224859, 39.777399, 4.5)")
+cursor.execute("INSERT INTO basketball (court_name, pos_x, pos_y, rating) VALUES ('basketball court 5', 47.242221, 39.835464, 4.8)")
+conn.commit()
+
+
+cursor.execute("INSERT INTO valleyball (court_name, pos_x, pos_y, rating) VALUES ('valleyball court 1', 47.242509, 39.827376, 5.0)")
+cursor.execute("INSERT INTO valleyball (court_name, pos_x, pos_y, rating) VALUES ('valleyball court 1', 47.242004, 39.780489, 4.2)")
+cursor.execute("INSERT INTO valleyball (court_name, pos_x, pos_y, rating) VALUES ('valleyball court 3', 47.277066, 39.711951, 3.9)")
+cursor.execute("INSERT INTO valleyball (court_name, pos_x, pos_y, rating) VALUES ('valleyball court 4', 47.211662, 39.726965, 4.5)")
+cursor.execute("INSERT INTO valleyball (court_name, pos_x, pos_y, rating) VALUES ('valleyball court 5', 47.238815, 39.710491, 4.8)")
+conn.commit()
+
+
+cursor.execute("INSERT INTO football (court_name, pos_x, pos_y, rating) VALUES ('football court 1', 47.224813, 39.779723, 5.0)")
+cursor.execute("INSERT INTO football (court_name, pos_x, pos_y, rating) VALUES ('football court 2', 47.294639, 39.828318, 4.2)")
+cursor.execute("INSERT INTO football (court_name, pos_x, pos_y, rating) VALUES ('football court 3', 47.225110, 39.778243, 3.9)")
+cursor.execute("INSERT INTO football (court_name, pos_x, pos_y, rating) VALUES ('football court 4', 47.199857, 39.737861, 4.5)")
+cursor.execute("INSERT INTO football (court_name, pos_x, pos_y, rating) VALUES ('football court 5', 47.313567, 39.681300, 4.8)")
+conn.commit()
+
+
+cursor.execute("INSERT INTO workout (court_name, pos_x, pos_y, rating) VALUES ('workout court 1', 47.241030, 39.711629, 5.0)")
+cursor.execute("INSERT INTO workout (court_name, pos_x, pos_y, rating) VALUES ('workout court 2', 47.256065, 39.714823, 4.2)")
+cursor.execute("INSERT INTO workout (court_name, pos_x, pos_y, rating) VALUES ('workout court 3', 47.291614, 39.850739, 3.9)")
+cursor.execute("INSERT INTO workout (court_name, pos_x, pos_y, rating) VALUES ('workout court 4', 47.212582, 39.724557, 4.5)")
+cursor.execute("INSERT INTO workout (court_name, pos_x, pos_y, rating) VALUES ('workout court 5', 47.218883, 39.704211, 4.8)")
+conn.commit()
+
